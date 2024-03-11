@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Map</title>
+  <link href="css/map.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+    crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+     integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+     crossorigin=""></script>
+</head>
+
+<body>
+  
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3" aria-label="Hopeland Systems">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main.html">
+        <img src="images/mainLogo.png" class="mainLogo">
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item center-sm no-margin-sm navbarItems1">
+            <a class="nav-link" href="main.html">Dashboard</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="gateways.html">Gateways</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="sensors.html">Sensors</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link active" href="map.html">Map</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="reports.html">Reports</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="margin-left: auto;">
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="sensors.html"><img src="images/searchWhite.png"></a>
+          </li>
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="reports.html"><img src="images/bellWhite.png"></a>
+          </li>
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="profileBasicInfo.html"><img src="images/avatarWhite.png"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bodyArea">
+    <div class="container-fluid">
+      <div class="row firstSpacer"> </div>
+
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col">
+          <div class="title"> Overview of All Devices </div>
+        </div>
+        <div class="col-1"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col" style="max-width:600px">
+          <img src="images/sensorKey.png" class="img-fluid sensorKey"> </img>
+        </div>
+        <div class="col-1"> </div>
+      </div>
+
+      <div class="row" id="map-container">
+        <div class="col-1"> </div>
+
+        <div class="col">
+          <!-- AREA TO PLACE JAVASCRIPT MAP BELOW -->
+          <div class="custom-popup" id="map"></div>
+        </div>
+
+        <div class="col-1"> </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <script src="js/map.js"></script>
+</body>
+
+</html>

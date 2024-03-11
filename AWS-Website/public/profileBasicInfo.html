@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Basic Information</title>
+  <link href="css/profileBasicInfo.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script src="js/profileBasicInfo.js"></script>
+  <script>
+    window.onload = function()
+    {
+      update();
+    };
+  </script>
+  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3" aria-label="Hopeland Systems">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main.html">
+        <img src="images/mainLogo.png" class="mainLogo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item center-sm no-margin-sm navbarItems1">
+            <a class="nav-link" href="main.html">Dashboard</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="gateways.html">Gateways</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="sensors.html">Sensors</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+          <li class="nav-item center-sm navbarItems">
+            <a class="nav-link" href="reports.html">Reports</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="margin-left: auto;">
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="sensors.html"><img src="images/searchWhite.png"></a>
+          </li>
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="reports.html"><img src="images/bellWhite.png"></a>
+          </li>
+          <li class="nav-item navbar-center-pic-sm navbarPictures">
+            <a class="nav-link" href="profileBasicInfo.html"><img src="images/avatarWhite.png"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bodyArea">
+
+    <div class="row firstSpacer"> </div>
+
+    <div class="row">
+
+      <div class="col-12 col-md-2">
+        <div class="title"> Profile Settings </div>
+      </div>
+      <div class="col-12 col-md-10">
+        <div class="profileButtonGroup d-grid gap-5 d-md-block">
+          <button class="btn btn-colour-1 active " type="button"
+            onclick="location.href = 'profileBasicInfo.html';">Basic
+            Information</button>
+          <button class="btn btn-colour-1 " type="button" onclick="location.href = 'profileBillingInfo.html';">Billing
+            Information</button>
+          <button class="btn btn-colour-1 " type="button"
+            onclick="location.href = 'profileBillingHistory.html';">Billing History</button>
+          <button class="btn btn-colour-1 " type="button" onclick="location.href = 'profileDateTime.html';">Date &
+            Time</button>
+          <button class="btn btn-colour-1 " type="button" onclick="location.href = 'profileChangePassword.html';">Change
+            Password</button>
+          <button class="btn btn-colour-1 " type="button" onclick="location.href = 'profileAlarmRecipients.html';">Alarm
+            Recipients</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row firstSpacer"> </div>
+
+
+    <div class="row">
+      <div class="col-12 col-md-3 basicInformation">
+        <form id="profile">
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="required infoTitle">Email Address:</label>
+            <input type="email" class="form-control" aria-describedby="emailHelp" name="email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="required infoTitle">Last Name:</label>
+            <input type="text" class="form-control" name="lastName" id="lastName">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="required infoTitle">First Name:</label>
+            <input type="text" class="form-control" name="firstName" id="firstName">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="infoTitle">Company Name:</label>
+            <input type="text" class="form-control" name="companyName" id="companyName">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="infoTitle">Phone Number:</label>
+            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber" maxlength="10">
+          </div>
+
+          <button id="save-button" type="button" class="btn btn-outline active" onclick="save_profile()">Save</button>
+          <button id="logout-button" type="button" class="btn btn-outline active" onclick="logout()" style="float: right;">Logout</button>
+          <div style="color:red; padding-top: 16px;" id="message"></div>
+        </form>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

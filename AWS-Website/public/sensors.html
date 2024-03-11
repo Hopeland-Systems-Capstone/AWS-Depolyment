@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sensors</title>
+  <link href="css/sensors.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <script src="js/sensors.js"></script>
+  <script>
+    window.onload = function () {
+      update();
+    };
+  </script>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3" aria-label="Hopeland Systems">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="main.html">
+      <img src="images/mainLogo.png" class="mainLogo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+        <li class="nav-item center-sm no-margin-sm navbarItems1">
+          <a class="nav-link" href="main.html">Dashboard</a>
+        </li>
+        <li class="nav-item center-sm navbarItems">
+          <a class="nav-link" href="gateways.html">Gateways</a>
+        </li>
+        <li class="nav-item center-sm navbarItems">
+          <a class="nav-link active" href="sensors.html">Sensors</a>
+        </li>
+        <li class="nav-item center-sm navbarItems">
+          <a class="nav-link" href="map.html">Map</a>
+        </li>
+        <li class="nav-item center-sm navbarItems">
+          <a class="nav-link" href="reports.html">Reports</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-sm-0" style="margin-left: auto;">
+        <li class="nav-item navbar-center-pic-sm navbarPictures">
+          <a class="nav-link" href="sensors.html"><img src="images/searchWhite.png"></a>
+        </li>
+        <li class="nav-item navbar-center-pic-sm navbarPictures">
+          <a class="nav-link" href="reports.html"><img src="images/bellWhite.png"></a>
+        </li>
+        <li class="nav-item navbar-center-pic-sm navbarPictures">
+          <a class="nav-link" href="profileBasicInfo.html"><img src="images/avatarWhite.png"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <section class="bodyArea">
+
+    <div class="row firstSpacer"> </div>
+
+    <div class="row">
+      <div class="col-6 col-md-2">
+        <div class="title"> Sensor Status </div>
+      </div>
+      <div class="col-6 col-md-2">
+        <input type="search" onkeyup="search_sensors()" id="search" class="form-control searchDevice"
+          placeholder="Search Devices">
+      </div>
+      <div class="col-4 col-md-1">
+        <div class="descriptors center-sm forest"> Forest - 0 </div>
+      </div>
+      <div class="col-4 col-md-1 center-sm">
+        <div class="descriptors flood"> Flood - 0 </div>
+      </div>
+      <div class="col-4 col-md-1 center-sm">
+        <div class="descriptors alarm"> Alarm - 0 </div>
+      </div>
+      <div class="col-4 col-md-1 center-sm">
+        <div class="descriptors online"> Online - 0 </div>
+      </div>
+      <div class="col-4 col-md-1 center-sm">
+        <div class="descriptors offline"> Offline - 0 </div>
+      </div>
+      <div class="col-4 col-md-1 center-sm">
+        <div class="descriptors inactive"> Inactive - 0 </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-10">
+        <table class="table table-hover gatewayTable shadow p-3" id="sensors-table">
+          <thead>
+            <tr>
+              <th scope="col">Status</th>
+              <th scope="col">Device Name</th>
+              <th scope="col">Interface Status</th>
+              <th scope="col">Last Update</th>
+              <th scope="col"> </th>
+            </tr>
+          </thead>
+          <tbody id = "table-body">
+            <!--<tr>
+              <th scope="row" class="align-middle"> <span class="dot2"></span> Online</th>
+              <td class="align-middle">
+                <div>VS121-DEMO</div>
+                <div>6600C3163121</div>
+              </td>
+              <td class="align-middle">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 431 ppm</div>
+                    <div class="row" style="font-size: 12px"> CO2 </div>
+                  </div>
+                </td>
+                <td class="align-middle">6 minutes ago</td>
+                <td class="align-middle"> <img src="images/smallGraph.png"></img> <img src="images/iIcon.png"></img>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="align-middle"> <span class="dot2"></span> Online</th>
+                <td class="align-middle">
+                  <div>VS121-DEMO</div>
+                  <div>6600C3163121</div>
+                </td>
+                <td class="align-middle">
+                  <div class="row">
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 431 ppm</div>
+                      <div class="row" style="font-size: 12px"> CO2 </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 26.8C</div>
+                      <div class="row" style="font-size: 12px"> Temperature </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 45%</div>
+                      <div class="row" style="font-size: 12px"> Humidity </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 1019hPa</div>
+                      <div class="row" style="font-size: 12px"> Barometric Pressure </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="align-middle">6 minutes ago</td>
+                <td class="align-middle"> <img src="images/smallGraph.png"></img> <img src="images/iIcon.png"></img>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row" class="align-middle"> <span class="dot3"></span> Offline</th>
+                <td class="align-middle">
+                  <div>VS121-DEMO</div>
+                  <div>6600C3163121</div>
+                </td>
+                <td class="align-middle">
+                  <div class="row">
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 431 ppm</div>
+                      <div class="row" style="font-size: 12px"> CO2 </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 26.8C</div>
+                      <div class="row" style="font-size: 12px"> Temperature </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 45%</div>
+                      <div class="row" style="font-size: 12px"> Humidity </div>
+                    </div>
+                    <div class="col-2">
+                      <div class="row" style="font-weight: bold"> 1019hPa</div>
+                      <div class="row" style="font-size: 12px"> Barometric Pressure </div>
+                    </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 1019hPa</div>
+                    <div class="row" style="font-size: 12px"> Barometric Pressure </div>
+                  </div>
+                </div>
+              </td>
+              <td class="align-middle">6 minutes ago</td>
+              <td class="align-middle"> <img src="images/smallGraph.png"></img> <img src="images/iIcon.png"></img></td>
+            </tr>
+            <tr>
+              <th scope="row" class="align-middle"> <span class="dot2"></span> Online</th>
+              <td class="align-middle">
+                <div>VS121-DEMO</div>
+                <div>6600C3163121</div>
+              </td>
+              <td class="align-middle">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 431 ppm</div>
+                    <div class="row" style="font-size: 12px"> CO2 </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 26.8C</div>
+                    <div class="row" style="font-size: 12px"> Temperature </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 45%</div>
+                    <div class="row" style="font-size: 12px"> Humidity </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 1019hPa</div>
+                    <div class="row" style="font-size: 12px"> Barometric Pressure </div>
+                  </div>
+                </div>
+              </td>
+              <td class="align-middle">6 minutes ago</td>
+              <td class="align-middle"> <img src="images/smallGraph.png"></img> <img src="images/iIcon.png"></img></td>
+            </tr>
+            <tr>
+              <th scope="row" class="align-middle"> <span class="dot3"></span> Offline</th>
+              <td class="align-middle">
+                <div>VS121-DEMO</div>
+                <div>6600C3163121</div>
+              </td>
+              <td class="align-middle">
+                <div class="row">
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 431 ppm</div>
+                    <div class="row" style="font-size: 12px"> CO2 </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 26.8C</div>
+                    <div class="row" style="font-size: 12px"> Temperature </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 45%</div>
+                    <div class="row" style="font-size: 12px"> Humidity </div>
+                  </div>
+                  <div class="col-2">
+                    <div class="row" style="font-weight: bold"> 1019hPa</div>
+                    <div class="row" style="font-size: 12px"> Barometric Pressure </div>
+                  </div>
+                </div>
+              </td>
+              <td class="align-middle">6 minutes ago</td>
+              <td class="align-middle"> <img src="images/smallGraph.png"></img> <img src="images/iIcon.png"></img> </td>
+            </tr>-->
+
+      </div>
+      <div class="col-1"> </div>
+    </div>
+  </section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
