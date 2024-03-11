@@ -1,0 +1,245 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Merriweather Sans';
+}
+
+.mainLogo{
+  width: 200px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.navbarItems1{
+  margin-left: 100px;
+  color: black;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+.navbarItems1:hover{
+  margin-left: 100px;
+  text-decoration: underline;
+  color: #576846;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.navbarItems{
+  color: black;
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 16px
+}
+
+.navbarItems:hover{ 
+  text-decoration: underline;
+  color: #576846;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
+.navbarPictures1{ /*search icon*/
+  margin-left: 730px;
+  margin-top: 10px;
+  width: 40px;
+  height: auto;
+}
+
+.navbarPictures1:hover{
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.navbarPictures{ /*avatar, and bell icons */
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 40px;
+  height: auto;
+}
+
+.navbarPictures:hover{
+  -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.title{
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.descriptors{
+  margin-top: 35px;
+}
+
+.searchDevice{
+  margin-top: 30px;
+}
+
+.barometricPressure{
+  height: 370px;
+  font-size: 18px;
+  font-weight: 600;
+  border: #b5b7ba .5px solid;
+  border-radius: 15px;
+}
+
+.barometricTitle{
+  padding-top: 10px;
+}
+
+.temperature{
+  height: 370px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  border: #b5b7ba .5px solid;
+  border-radius: 15px;
+}
+
+.temperatureTitle{
+  padding-top: 10px;
+}
+
+.co2level{
+  height: 370px;
+  font-size: 18px;
+  font-weight: 600;
+  border: #b5b7ba .5px solid;
+  border-radius: 15px;
+}
+
+.co2levelTitle{
+  padding-top: 10px;
+}
+
+.humidity{
+  height: 370px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+  
+  border: #b5b7ba .5px solid;
+  border-radius: 15px;
+}
+
+.humidityTitle{
+  padding-top: 10px;
+}
+
+.waterLevel{
+  height: 370px;
+  font-size: 18px;
+  font-weight: 600;
+  border: #b5b7ba .5px solid;
+  border-radius: 15px;
+}
+
+.waterLevelTitle{
+  padding-top: 10px;
+}
+
+.firstSpacer{
+  margin: 40px;
+}
+
+.secondSpacer{
+  margin: 20px;
+}
+
+.thirdSpacer{
+  margin: 20px;
+}
+
+.pressureGraph{
+  margin-left: 20px;
+  margin-top: 30px;
+  height: 230px;
+}
+
+.temperatureGraph{
+  margin-left: 20px;
+  margin-top: 30px;
+  height: 230px;
+}
+
+.measurements{
+  margin-left: 30px;
+  display: inline;
+  font-size: 14px;
+}
+
+.measurements1{
+  margin-left: 30px;
+  display: inline;
+  font-size: 14px;
+}
+
+
+.dot1{
+  height: 10px;
+  width: 10px;
+  background-color: #F28C0C;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot2{
+  height: 10px;
+  width: 10px;
+  background-color: #84C642;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot3{
+  height: 10px;
+  width: 10px;
+  background-color: #B0C6CE;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.co2Graph{
+  height: 230px;
+  margin-top: 30px;
+}
+
+.gatewayTable{
+  margin-top: 40px;
+  border: 2px solid black;
+}
+
+.bodyArea {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+@media (max-width:990px) {
+  .center-sm {
+    text-align: center;
+  }
+
+  .no-margin-sm {
+    margin-left: 0px;
+  }
+
+  .navbar-center-pic-sm {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .table-responsive-sm {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

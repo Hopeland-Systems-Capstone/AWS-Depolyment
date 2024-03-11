@@ -1,0 +1,76 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.titleText{
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.loginLogo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  margin-top: -70px;
+  margin-bottom: 20px;
+}
+
+.btn-outline {
+  color: #576846;
+  background-color: #ffffff;
+  border-color: #576846;
+  font-weight: bold;
+}
+
+.btn-outline {
+  color: #576846;
+  background-color: #ffffff;
+  border-color: #576846;
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.btn-outline:hover,
+.btn-outline:active,
+.btn-outline:focus,
+.btn-outline.active {
+  background: #576846;
+  color: #ffffff;
+  border-color: #576846;
+}
+
+.btn{
+  margin-top: 20px;
+}
+
+button.loading {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.8;
+  pointer-events: none;
+  position: relative;
+}
+
+button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 40px);
+  transform: translate(-50%, -50%);
+  border: 2px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
